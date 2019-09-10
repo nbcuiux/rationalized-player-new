@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="assets/css/styles.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div id="root">
+			</div>
+		</div>
+		<script src="assets/js/main.js"></script>
+		
+		<script>
+			var options = {
+				playlist: [
+		{
+			videoSrc: "assets/img/sing.mp4",
+			coverImgSrc: "assets/img/sing-movie-animals.jpg",
+			title: "The Sing Movie",
+			subtitle: "In Theaters August 19",
+			description: "A group of animals that enter a singing competition, hosted by a koala hoping to save his theater."
+		},
+		{
+			videoSrc: "assets/img/secret-life-of-pets-trailer3.mp4",
+			coverImgSrc: "assets/img/secret-life-of-pets-poster.jpg",
+			title: "Pets the movie Trailer",
+			subtitle: "In Theaters July 8",
+			description: "The quiet life of a terrier named Max is upended when his owner takes in Duke, a stray whom Max instantly dislikes."
+		}
+	],
+				initialPlaylistIndex: 0,
+				aspectRatio: 1280/692,
+				endCardShowTime: 12,
+				playNextDelay: 5,
+				controlBarHoverTimeout: 2,
+				playerMode: "vp-mode-vod",
+				endCardLinks: [
+					{
+						text: "Some link 1",
+						url: "http://blah.com"
+					},
+					{
+						text: "Some link 2",
+						url: "http://blah.com"
+					}
+				],
+				adRoll: false,
+				sharePlatforms: ["facebook", "twitter", "googleplus"],
+				allowEmbed: true,
+				allowShare: true,
+				theme: {
+					colorHighlight: "#33b5d5"
+				} 
+			}
+
+
+			window.mountPlayer(options, document.getElementById('root'));
+
+		</script>
+	</body>
+</html>

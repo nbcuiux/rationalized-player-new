@@ -1,0 +1,82 @@
+
+
+
+
+@mixin z-index-fullscreen($zindex) {
+	z-index: $zindex;
+	.container--fullscreen & {
+		z-index: $zindex + 2147483647;
+	}
+}
+
+
+
+.video-container {
+	@include z-index-fullscreen(2);
+}
+
+.control-bar {
+	@include z-index-fullscreen(10);
+}
+
+.progress-bar {
+	@include z-index-fullscreen(15);
+}
+
+
+.volume-control {
+	@include z-index-fullscreen(30);
+}
+
+.next-dialog {
+	@include z-index-fullscreen(30);
+}
+
+.quick-preview {
+	@include z-index-fullscreen(40);
+}
+
+.pause-card {
+	@include z-index-fullscreen(5);
+}
+
+.loading-card {
+	@include z-index-fullscreen(6);
+}
+
+.cover-img {
+	@include z-index-fullscreen(3);
+}
+
+.cc-card {
+	@include z-index-fullscreen(50);
+}
+
+.video-end-card {
+	@include z-index-fullscreen(60);
+}
+
+.squeeze-card {
+	@include z-index-fullscreen(1);
+}
+
+.squeeze-card--end {
+	@include z-index-fullscreen(10);// The end card should be placed above the video, while normal squeeze card gets placed below
+}
+
+.hover-dialog__dialog {
+	@include z-index-fullscreen(100);
+}
+
+.share-card {
+	@include z-index-fullscreen(15);
+}
+
+.share-trigger {
+	@include z-index-fullscreen(101);
+}
+
+.ad-roll__overlay {
+	@include z-index-fullscreen(102);
+}
+

@@ -1,0 +1,46 @@
+.btn-skip {
+  position: absolute;
+  bottom: 60px;
+  right: -160px;
+  z-index: 100;
+
+  padding: 9px 35px;
+
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #D1D7DD;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background: rgba(0, 0, 0, 0.4);
+  
+  border: 1px solid #D1D7DD;
+  border-radius: 4px;
+
+  box-shadow: 2px 2px 6px 0 rgba(0,0,0,0.40);
+
+  opacity: 0;
+
+  transition: right 0.5s ease, opacity 1s ease, background 1s ease;
+
+  &--visible {
+    right: 20px;
+    opacity: 1;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  // Small Screens
+  @media screen and (max-width: $bp-small) {
+    padding: 12px 25px;
+
+    font-size: 14px;
+  }
+
+  
+}

@@ -1,0 +1,277 @@
+$color-error: #ff6a6a;
+$color-blue: #62c6e8;
+$color-blue-dark: #0081ad;
+
+
+.crisp-container {
+	padding: 90px 0px 50px;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 600;
+	margin: 0px 30px;
+	h1 {
+		font-size: 40px;
+		margin-bottom: 40px;
+		color: #333;
+	}
+}
+
+.crisp__error-msg {
+	font-size: 12px;
+	color: $color-error;
+	margin-bottom: 5px;
+}
+
+.crisp-textarea {
+	width: 100%;
+	border: 1px solid #EEE;
+	background: #FAFAFA;
+	padding: 10px;
+	min-height: 500px;
+	outline: none;
+	font-family: courier, sans;
+	font-size: 12px;
+	color: #555;
+	margin: 0px 0px 25px 0px;
+	border-radius: 2px;
+	resize: none;
+	.crisp--json-error & {
+		background: #fff3f3;
+		border: 1px solid #ffdfdf;
+	}
+}
+
+.crisp-generate {
+	display: flex;
+	justify-content: space-between;
+	margin: 0px 0px 50px 0px;
+}
+
+.crisp-editor__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 20px;
+}
+
+.crisp-button {
+	border: 1px solid $color-blue;
+	background: #FFF;
+	border-radius: 2px;
+	padding: 10px 25px;
+	color: $color-blue;
+	cursor: pointer;
+	transition: color 0.4s, background 0.4s;
+	outline: none;
+	font-size: 13px;
+	&:hover {
+		background: $color-blue;
+		color: #FFF;
+	}
+}
+
+.crisp__player-above {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.crisp-toggles {
+	display: flex;
+}
+
+.crisp-toggle {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 300;
+	cursor: pointer;
+	margin-right: 25px;
+	>div {
+		content: "";
+		display: block;
+		width: 20px;
+		height: 20px;
+		border: 1px solid #DDD;
+		margin-right: 8px;
+		padding-top: 2px;
+		border-radius: 2px;
+		text-align: center;
+		transition: border 0.3s;
+
+	}
+
+	i {
+		opacity: 0;
+		transform: scale(0.5);
+		transition: 0.3s all;
+		color: $color-blue-dark;
+	}
+
+	&:hover {
+		>div {
+			border: 1px solid $color-blue;
+		}
+	}
+
+	&--active {
+		i {
+			opacity: 1;
+			transform: scale(1);
+		}
+
+	}
+	&--disabled {
+		pointer-events: none;
+		opacity: 0.5;
+	}
+
+}
+
+
+.crisp-generate__button {
+	background: #DDD;
+	border: 1px solid #CCC;
+	color: #FFF;
+	font-size: 18px;
+	font-weight: 300;
+	outline: none;
+	padding: 10px 25px;
+	border-radius: 2px;
+	transition: background 0.3s;
+
+	.crisp--changed & {
+		background: #75d3f3;
+		border: 1px solid $color-blue;	
+		cursor: pointer;	
+		&:hover {
+			background: #62c6e8;
+		}
+	}
+}
+
+.crisp-player-wrapper {
+	position: relative;
+}
+
+
+.player {
+
+	position: relative;
+	opacity: 1;
+	overflow: visible;
+	width: 100%;
+
+	.crisp-spinner {
+		display: none;
+	}
+
+	&-enter {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		.container {
+			opacity: 0;
+			positon: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 1000;
+		}
+		.crisp-spinner {
+			display: block;
+		}
+	}
+
+	&-enter-active {
+		.container {
+			transition: opacity 0.3s 1s;
+			position: absolute;
+			opacity: 1;
+		}
+	}
+
+	&-leave {
+		.container {
+			opacity: 1;
+			positon: absolute;
+			z-index: 1000;
+		}
+	}
+
+	&-leave-active {
+		.container {
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+	}
+}
+
+
+
+
+.btn-spinner {
+  margin-bottom: 37px;
+  width: 100%;
+  border: 3px solid white;
+  height: 72px;
+  line-height: 72px;
+  text-align: center;
+}
+
+
+
+.spinner {
+  div {
+    width: 20px;
+    height: 20px;
+    margin: 0 3px;
+    background-color: $color-blue;
+    opacity: .95;
+
+    border-radius:100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.35s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.35s infinite ease-in-out both;
+  }
+
+ div:nth-child(1) {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+ }
+
+ div:nth-child(2) {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+ }  
+}
+
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+
+.crisp-spinner {
+	width: 100%;
+	position: absolute;
+	z-index: 900;
+	font-size: 50px;
+	color: #000;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	padding: 80px 0px;
+	background: #FAFAFA;
+}

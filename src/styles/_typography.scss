@@ -1,0 +1,24 @@
+
+
+@mixin font-style-big {
+	  font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+@mixin font-style-heading-medium {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #FFF;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+
+
+@mixin font-style-p {
+	line-height: 1.5;
+  font-size: 13px;
+  font-weight: 300;
+}

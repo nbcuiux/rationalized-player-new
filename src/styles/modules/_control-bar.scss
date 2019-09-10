@@ -1,0 +1,102 @@
+
+.control-bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: green;
+	height: 40px;
+	background: rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px 20px;
+	color: $color-light-grey;
+	opacity: 0;
+	transform: translateY(50px);
+
+	transition: opacity 0.4s, transform 0.4s;
+
+	.container--show-controls & {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+.control-bar__left,
+.control-bar__right {
+	display: flex;
+	align-items: center;
+}
+
+.control-bar__right > div {
+	margin-left: 15px;
+}
+
+
+.play-control {
+	i {
+		cursor: pointer;
+	}
+
+	i.icon-play {
+		display: block;
+		.container--playing & {
+			display: none;	
+		}
+	}
+
+	i.icon-pause {
+		display: none;
+		.container--playing & {
+			display: block;	
+		}
+	}
+
+}
+
+.control-bar__icon {
+	width: 26px;
+	height: 70%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: $color-light-grey;
+	&:hover {
+		color: #FFF;
+	}
+}
+
+.control-bar__icon--next {
+	@media (max-width: $bp-small) {
+		display: none;
+	}
+}
+
+.control-bar__icon-fullscreen {
+	@include iconcss;
+	&:before {
+		@include icon(expand);
+	}
+	.container--fullscreen & {
+		&:before {
+			@include icon(shrink);
+		}
+	}
+}
+
+.control-bar__time {
+	margin-left: 5px;
+	font-weight: 300;
+	font-size: 12px;
+	width: auto;
+	text-align: center;
+	margin-left: 9px;
+}
+
+.control-bar__live {
+	display: none;
+}

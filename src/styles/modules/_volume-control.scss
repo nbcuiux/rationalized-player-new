@@ -1,0 +1,62 @@
+
+
+.volume-control {
+	  height: 115px;
+    position: absolute;
+    display: flex;
+    background: rgba(0, 0, 0, 0.7);
+    left: 50%;
+    margin-left: -20px;
+    border-radius: 5px;
+    bottom: 50px;
+    width: 40px;
+    //pointer-events: none;
+    //transition: all 0.2s ease-out;
+		&:after {
+	    width: 0;
+	    height: 0;
+	    border-style: solid;
+	    border-width: 8px 8px 0 8px;
+	    border-color: rgba(black, 0.7) transparent transparent transparent;
+	    content: '';
+	    bottom: -7px;
+	    right: 12px;
+	    position: absolute;
+	  }
+    
+}
+
+
+.volume-control__slider {
+	background: #676767;
+  width: 4px;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+  margin: 15px auto;
+  height: 80px;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+
+.volume-control__highlight {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 4px;
+	background: $color-hilight;
+	box-shadow: inset 0px 0px 1px 1px rgba(#FFF, 0.2);
+	border-radius: 2px;
+}
+
+.volume-control__handle {
+	background: #fff;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+	position: absolute;
+	bottom: 100%;
+	left: -2px;  
+	margin-top: 4px;
+	transform: translateY(4px);
+}

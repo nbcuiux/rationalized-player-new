@@ -1,0 +1,35 @@
+
+
+
+
+.hover-dialog__dialog {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s, visibility 0.2s 0.2s;
+	position: relative;
+	.hover-dialog--hovering & {
+		transition: opacity 0.4s, visibility 0.4s 0.0s;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.container--scrubbing & {
+		display: none;
+	}
+
+}
+
+
+.hover-dialog--disabled {
+	opacity: 0.5;
+	.control-bar__icon {
+		cursor: default;
+		&:hover {
+			color: $color-light-grey;
+		}
+	}
+}
+
+.hover-dialog--quality {
+	display: none;
+}

@@ -1,0 +1,76 @@
+.share-trigger {
+	backface-visibility: hidden;
+	color: rgba(#FFF, 0.8);
+	background: rgba(black, 0.25);
+	border: solid 2px rgba(#FFF, 0.8);
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	font-size: 18px;
+	right: 20px;
+	top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: $basic-transition;
+	opacity: 1.0;
+
+	&-enter {
+		opacity: 0;
+	}
+
+	&-enter-active {
+		transition: $basic-transition;
+		opacity: 1;
+	}
+
+
+	&-leave {
+		pointer-events: none;
+		opacity: 1;
+	}
+
+	&-leave-active {
+		pointer-events: none;
+		transition: $basic-transition;
+		opacity: 0;
+	}
+
+	&:after {
+		font-family: $font-stack;
+		font-size: 13px;
+		width: 50px;
+		text-align: center;
+		content: 'Share';
+		text-transform: capitalize;
+		font-weight: 300;
+		position: absolute;
+		color: #FFF;
+		letter-spacing: 0.5px;
+		top: 56px;
+		opacity: 0;
+		transform: translateY(-13px);
+		transition: transform 0.4s ease-out, opacity 0.2s ease-out;
+	}
+
+	&:hover {
+		color: rgba(#FFF, 0.8);
+		// background: rgba(#000, 0.5);
+		// transform: scale3d(1.1, 1.1, 1);
+
+		&:after {
+			transform: translateY(0px);
+			opacity: 1;
+		}
+	}
+
+	.container--fullscreen & {
+		right: 3vh;
+		top: 3vh;
+	}
+
+
+}

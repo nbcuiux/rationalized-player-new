@@ -1,0 +1,158 @@
+
+
+@keyframes liveIndicatorPopIn {
+	0% {
+		transform: scale(0.2);
+	}
+
+	60% {
+		transform: scale(1.2);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+.vp-mode-live {
+	.progress-bar {
+		//display: none;
+	}
+	.control-bar__time {
+		display: none;
+	}
+	.hover-dialog--next {
+		display: none;
+	}
+	.hover-dialog--cc {
+		display: none;
+	}
+	.control-bar__live {
+		display: block;
+	}
+
+
+	.quality-dialog {
+		bottom: 42px;
+	}
+	.cc-dialog {
+		bottom: 42px;
+	}
+	.volume-control {
+		bottom: 42px;
+	}
+	.next-dialog {
+		bottom: 42px;
+	}
+
+
+	.control-bar__live {
+		margin-left: 15px;
+		display: flex;
+		align-items: center;
+
+		.control-bar__time {
+			display: block;
+		}
+	}
+	
+
+	.control-bar__live-indicator {
+		font-weight: lighter;
+		font-size: 14px;
+		display: flex;
+		margin-right: 10px;
+		align-items: center;
+		&:after {
+			content: '';
+			display: inline-block;
+			width: 8px;
+			height: 8px;
+			position: relative;
+			top:-1px;
+			border-radius: 4px;
+			background-color: #ff282d;
+			margin-left: 8px;
+			display: none;
+			transition: $basic-transition;
+		}
+	}
+
+	.control-bar__live-button {
+		display: block;
+	  border: 1px solid $color-light-grey;
+	  background: transparent;
+	  padding: 3px 5px;
+	  color: $color-light-grey;
+	  border-radius: 1px;
+	  font-size: 12px;
+	  cursor: pointer;
+	  transition: .2s ease-in-out;
+	  outline: 0;
+	  text-decoration: none;
+	  border-radius: $border-radius-dialog;
+	  margin-left: 10px;
+	  &:hover {
+	    background: rgba(white, 0.9);
+	    color: black;
+	  }
+
+	  i {
+	  	margin-left: 10px;
+	  }
+
+	}
+
+	.control-bar__live-time {
+		margin: 0px 0px 0px 8px;
+		padding-left: 8px;
+		font-size: 12px;
+		display: block;
+		border-left: 1px solid $color-light-grey;
+	}
+
+	.control-bar__live-active {
+		.control-bar__live-indicator:after {
+			display: inline-block;
+			animation: liveIndicatorPopIn 0.2s linear;
+		}
+
+		.control-bar__live-button {
+			display: none;
+		}
+		.control-bar__time {
+			display: none;
+		}
+
+		.control-bar__live-time {
+			display: none;
+		}
+
+	}
+
+	/*
+	.control-bar__live-active {
+		display: none;
+	}
+	.control-bar__live-deactivated {
+		display: inline-block;
+	}
+	*/
+
+
+	/*
+	&.container--playing {
+		.control-bar__live-deactivated {
+			display: none;
+		}
+		.control-bar__live-active {
+			display: inline-block;
+		}
+		.control-bar__live {
+			&:after {
+				background-color: #ff282d;
+			}
+		}
+	}
+	*/
+}
